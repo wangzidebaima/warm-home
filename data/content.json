@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "title": "温馨的小家",
+  "subtitle": "有爱 · 温暖 · 每一天",
+  "examDate": "2027-01-17",
+  "examLabel": "期末考试",
+  "city": "西安市未央区",
+  "latitude": 34.2706,
+  "longitude": 108.9453,
+  "todos": [
+    "送梓逸上学",
+    "接清湲放学",
+    "买菜、取快递"
+  ],
+  "messages": [
+    { "from": "妈妈", "text": "晚上吃饺子" },
+    { "from": "爸爸", "text": "周末去公园" },
+    { "from": "奶奶", "text": "记得多喝水" }
+  ],
+  "photos": [],
+  "photoIntervalHours": 3,
+  "homework": {
+    "son": { "name": "徐梓逸", "items": ["语文：抄写词语两页", "数学：口算 20 题"] },
+    "daughter": { "name": "徐清湲", "items": ["英语：跟读 Unit 3", "语文：背古诗一首"] }
+  },
+  "loveTopics": [
+    "今天不生气，好好和家人说话",
+    "今天多夸一句，少说一句责备",
+    "今天换位思考，听听孩子怎么想",
+    "今天陪孩子认真玩十分钟",
+    "今天说三句谢谢",
+    "今天自己的事自己做",
+    "今天遇到困难先想办法，不哭鼻子",
+    "今天对家人笑一笑",
+    "今天读书十五分钟",
+    "今天收拾好自己的书桌",
+    "今天主动帮忙做一件家务",
+    "今天把「对不起」说出口",
+    "今天珍惜粮食，不剩饭",
+    "今天早睡早起精神好",
+    "今天学会一个新本领"
+  ],
+  "specialDays": [
+    { "name": "元旦", "date": "01-01", "type": "solar" },
+    { "name": "妇女节", "date": "03-08", "type": "solar" },
+    { "name": "植树节", "date": "03-12", "type": "solar" },
+    { "name": "劳动节", "date": "05-01", "type": "solar" },
+    { "name": "儿童节", "date": "06-01", "type": "solar" },
+    { "name": "建党节", "date": "07-01", "type": "solar" },
+    { "name": "建军节", "date": "08-01", "type": "solar" },
+    { "name": "教师节", "date": "09-10", "type": "solar" },
+    { "name": "国庆节", "date": "10-01", "type": "solar" },
+    { "name": "圣诞节", "date": "12-25", "type": "solar" },
+    { "name": "春节", "lunar": "01-01", "type": "lunar" },
+    { "name": "元宵节", "lunar": "01-15", "type": "lunar" },
+    { "name": "端午节", "lunar": "05-05", "type": "lunar" },
+    { "name": "七夕", "lunar": "07-07", "type": "lunar" },
+    { "name": "中秋节", "lunar": "08-15", "type": "lunar" },
+    { "name": "重阳节", "lunar": "09-09", "type": "lunar" },
+    { "name": "腊八节", "lunar": "12-08", "type": "lunar" }
+  ],
+  "birthdays": []
+}

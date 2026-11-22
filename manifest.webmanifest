@@ -1,0 +1,13 @@
+{
+  "name": "温馨的小家",
+  "short_name": "温馨小家",
+  "description": "家庭信息看板",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "background_color": "#FFF7E6",
+  "theme_color": "#F5A65A",
+  "icons": [
+    { "src": "avatars/son.png", "sizes": "any", "type": "image/png", "purpose": "any" }
+  ]
+}
