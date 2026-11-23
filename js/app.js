@@ -72,8 +72,9 @@
     var topics = content.loveTopics || [];
     if (topics.length) {
       var now = new Date();
-      var dayKey = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
-      $('themeText').textContent = topics[dayKey % topics.length];
+      // 用连续天数取模：跨月不会跳号，保证每天严格换一条、每条都轮得到
+      var dayIndex = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
+      $('themeText').textContent = topics[dayIndex % topics.length];
     }
     var todayStr = pad(new Date().getMonth() + 1) + '-' + pad(new Date().getDate());
     var lunarKey = window.Lunar ? window.Lunar.lunarKey(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate()) : '';
