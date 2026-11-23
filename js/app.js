@@ -196,18 +196,40 @@
   function renderWeatherIcon(code) {
     var icon = $('weatherIcon');
     if (!icon) return;
-    var sunny = (code === 0 || code === 1 || code === 2);
-    var rainy = (code >= 51 && code <= 67) || (code >= 80);
-    var snowy = code >= 71 && code <= 77;
-    var color = sunny ? '#f5b301' : (rainy ? '#5B9BD5' : (snowy ? '#9FB8CC' : '#B0B0B0'));
-    var html = '<circle cx="20" cy="24" r="10" fill="' + color + '"/>';
-    if (sunny) {
-      html += '<path d="M24 8V4M24 44v-4M8 24H4M44 24h-4M13 13l-3-3M38 38l3 3M38 13l3-3M13 38l-3 3" stroke="' + color + '" stroke-width="2.4" stroke-linecap="round"/>';
-    } else if (rainy || snowy) {
-      html += '<ellipse cx="30" cy="18" rx="10" ry="7" fill="#E6E6E6"/>';
-      html += '<circle cx="25" cy="16" r="6" fill="#E6E6E6"/><circle cx="34" cy="17" r="7" fill="#E6E6E6"/>';
-      if (rainy) html += '<path d="M22 30l-2 6M30 30l-2 6M38 30l-2 6" stroke="#5B9BD5" stroke-width="2.6" stroke-linecap="round"/>';
-      else html += '<circle cx="22" cy="34" r="1.6" fill="#9FB8CC"/><circle cx="30" cy="36" r="1.6" fill="#9FB8CC"/><circle cx="38" cy="34" r="1.6" fill="#9FB8CC"/>';
+    // 橙色标题栏背景，太阳必须白盘+深橙描边才看得清
+    var SUN = '#FFF3C4', SUN_EDGE = '#D2691E', CLOUD = '#FFFFFF', CLOUD_EDGE = '#C9B69C';
+    function sun(cx, cy, r) {
+      var h = '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="' + SUN + '" stroke="' + SUN_EDGE + '" stroke-width="2.2"/>';
+      for (var i = 0; i < 8; i++) {
+        var a = i * Math.PI / 4, r1 = r + 3, r2 = r + 7;
+        h += '<line x1="' + (cx + Math.cos(a) * r1).toFixed(1) + '" y1="' + (cy + Math.sin(a) * r1).toFixed(1) +
+             '" x2="' + (cx + Math.cos(a) * r2).toFixed(1) + '" y2="' + (cy + Math.sin(a) * r2).toFixed(1) +
+             '" stroke="' + SUN_EDGE + '" stroke-width="2.6" stroke-linecap="round"/>';
+      }
+      return h;
+    }
+    function cloud(cx, cy, s, fill) {
+      fill = fill || CLOUD;
+      return '<path d="M' + (cx - 14*s) + ' ' + (cy + 6*s) +
+        ' a' + (8*s) + ' ' + (8*s) + ' 0 0 1 ' + (2*s) + ' ' + (-13*s) +
+        ' a' + (10*s) + ' ' + (10*s) + ' 0 0 1 ' + (18*s) + ' ' + (3*s) +
+        ' a' + (7*s) + ' ' + (7*s) + ' 0 0 1 ' + (3*s) + ' ' + (10*s) + ' z" fill="' + fill + '" stroke="' + CLOUD_EDGE + '" stroke-width="1.6"/>';
+    }
+    var html = '';
+    if (code === 0 || code === 1) {          // 晴 / 大致晴朗
+      html = sun(24, 24, 11);
+    } else if (code === 2) {                  // 多云：太阳 + 云
+      html = sun(17, 17, 7) + cloud(24, 30, 1.15);
+    } else if (code === 3) {                  // 阴：云为主 + 一点阳光
+      html = sun(15, 15, 6) + cloud(26, 30, 1.2, '#F2EFE9');
+    } else if (code >= 71 && code <= 77) {    // 雪
+      html = cloud(24, 22, 1.15, '#EAF2F8') +
+        '<circle cx="18" cy="36" r="2" fill="#FFFFFF"/><circle cx="26" cy="39" r="2" fill="#FFFFFF"/><circle cx="34" cy="36" r="2" fill="#FFFFFF"/>';
+    } else if ((code >= 51 && code <= 67) || code >= 80 || (code >= 95)) { // 雨
+      html = cloud(24, 20, 1.15) +
+        '<path d="M18 32l-2 7M26 32l-2 7M34 32l-2 7" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>';
+    } else {                                  // 其他：云
+      html = cloud(24, 24, 1.2);
     }
     icon.innerHTML = html;
   }

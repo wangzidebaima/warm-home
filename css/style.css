@@ -45,7 +45,7 @@ body {
 .cd-num { font-size:4.4vh; font-weight:800; color:#fff7e6; line-height:1; }
 .cd-unit { font-size:1.9vh; }
 .weather { display:flex; align-items:center; gap:0.7vw; justify-content:flex-end; }
-.weather-icon { width:6vh; height:6vh; flex:none; }
+.weather-icon { width:7.2vh; height:7.2vh; flex:none; }
 .weather-temp { font-size:2.9vh; font-weight:700; }
 .weather-tip { font-size:1.75vh; color:#FFF3DC; margin-top:0.4vh; }
 
