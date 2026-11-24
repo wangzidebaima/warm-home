@@ -19,7 +19,7 @@ body {
   background:var(--cream);
   padding:1.4vh 1.6vw;
   display:grid;
-  grid-template-rows: auto auto minmax(0,1fr) minmax(0,1.06fr);
+  grid-template-rows: auto auto minmax(0,1.3fr) minmax(0,0.96fr);
   gap:1.1vh;
   border-radius:18px;
 }
@@ -63,20 +63,16 @@ body {
 .special-day { font-size:1.7vh; color:#B4748C; flex:none; }
 
 /* middle */
-.middle { display:grid; grid-template-columns: 1fr 1fr 0.82fr; gap:1.1vw; min-height:0; }
+.middle { display:grid; grid-template-columns: 0.95fr 1.85fr; gap:1.1vw; min-height:0; }
 .card { display:flex; flex-direction:column; min-height:0; border-radius:14px; padding:1.2vh 1vw 1vh; }
 .card-todo { background:var(--mint); border:2px solid var(--mint-b); }
-.card-msg  { background:var(--pink); border:2px solid var(--pink-b); }
 .card-photo{ background:var(--peach); border:2px solid var(--peach-b); align-items:center; }
 .card-title { font-size:2.15vh; font-weight:700; display:flex; align-items:center; gap:0.5vw; margin-bottom:0.8vh; flex:none; }
 .card-todo .card-title { color:#2F5E42; }
-.card-msg .card-title { color:#9C3B5F; }
 .card-photo .card-title { color:#9A6B2E; align-self:flex-start; }
-.ic-todo,.ic-msg,.ic-photo { width:1.9vh; height:1.9vh; display:inline-block; flex:none; }
+.ic-todo,.ic-photo { width:1.9vh; height:1.9vh; display:inline-block; flex:none; }
 .ic-todo { background:var(--mint-i); border-radius:50%; box-shadow:inset 0 0 0 0.4vh var(--mint); position:relative; }
 .ic-todo::after{content:"";position:absolute;left:0.55vh;top:0.3vh;width:0.5vh;height:0.9vh;border:solid #fff;border-width:0 0.3vh 0.3vh 0;transform:rotate(40deg);}
-.ic-msg { background:var(--pink-i); border-radius:0.3vh; position:relative; }
-.ic-msg::after{content:"";position:absolute;left:0.2vh;top:0.35vh;width:1.5vh;height:1vh;border:solid #fff;border-width:0.2vh;clip-path:polygon(0 0,100% 0,50% 70%);}
 .ic-photo { background:var(--orange-d); border-radius:0.3vh; position:relative; }
 .ic-photo::after{content:"";position:absolute;left:0.45vh;top:0.45vh;width:1vh;height:1vh;background:#fff;border-radius:50%;}
 
@@ -87,7 +83,6 @@ body {
   font-size:2.05vh; line-height:1.35; padding:0.7vh 0.9vw; border-radius:9px; flex:none;
 }
 .card-todo .item { background:#fff; color:#2F5E42; border-left:0.6vh solid var(--mint-i); }
-.card-msg .item { background:#fff; color:#8A3B5E; border-left:0.6vh solid var(--pink-i); }
 .item .who { font-weight:700; margin-right:0.5vw; }
 
 /* photo */
@@ -111,6 +106,5 @@ body {
 .hw-daughter .item { color:#8A3B5E; border-left:0.6vh solid #E08FB0; }
 
 @media (max-aspect-ratio: 5/4) {
-  .middle { grid-template-columns:1fr 1fr; }
-  .card-photo { grid-column:1 / -1; }
+  .middle { grid-template-columns:1fr; }
 }

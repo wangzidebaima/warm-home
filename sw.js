@@ -1,5 +1,5 @@
 // 家庭看板 Service Worker —— 只缓存静态外壳，内容/照片始终走网络保证自动更新
-var CACHE = 'warm-home-v6';
+var CACHE = 'warm-home-v7';
 var SHELL = [
   './',
   './index.html',
