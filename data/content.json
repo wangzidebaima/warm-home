@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 5,
   "title": "温馨的小家",
   "subtitle": "有爱 · 温暖 · 每一天",
   "examDate": "2027-01-17",
@@ -7,18 +7,18 @@
   "city": "西安市未央区",
   "latitude": 34.2706,
   "longitude": 108.9453,
-  "todos": [
-    "送梓逸上学",
-    "接清湲放学",
-    "买菜、取快递"
+  "todos": [],
+  "messages": [],
+  "photos": [
+    "photos/photo01.jpg", "photos/photo02.jpg", "photos/photo03.jpg", "photos/photo04.jpg", "photos/photo05.jpg", "photos/photo06.jpg", "photos/photo07.jpg", "photos/photo08.jpg",
+    "photos/photo09.jpg", "photos/photo10.jpg", "photos/photo11.jpg", "photos/photo12.jpg", "photos/photo13.jpg", "photos/photo14.jpg", "photos/photo15.jpg", "photos/photo16.jpg",
+    "photos/photo17.jpg", "photos/photo18.jpg", "photos/photo19.jpg", "photos/photo20.jpg", "photos/photo21.jpg", "photos/photo22.jpg", "photos/photo23.jpg", "photos/photo24.jpg",
+    "photos/photo25.jpg", "photos/photo26.jpg", "photos/photo27.jpg", "photos/photo28.jpg", "photos/photo29.jpg", "photos/photo30.jpg", "photos/photo31.jpg", "photos/photo32.jpg",
+    "photos/photo33.jpg", "photos/photo34.jpg", "photos/photo35.jpg", "photos/photo36.jpg", "photos/photo37.jpg", "photos/photo38.jpg", "photos/photo39.jpg", "photos/photo40.jpg",
+    "photos/photo41.jpg", "photos/photo42.jpg", "photos/photo43.jpg", "photos/photo44.jpg", "photos/photo45.jpg", "photos/photo46.jpg", "photos/photo47.jpg", "photos/photo48.jpg",
+    "photos/photo49.jpg", "photos/photo50.jpg", "photos/photo51.jpg", "photos/photo52.jpg", "photos/photo53.jpg", "photos/photo54.jpg", "photos/photo55.jpg", "photos/photo56.jpg"
   ],
-  "messages": [
-    { "from": "妈妈", "text": "晚上吃饺子" },
-    { "from": "爸爸", "text": "周末去公园" },
-    { "from": "奶奶", "text": "记得多喝水" }
-  ],
-  "photos": [],
-  "photoIntervalHours": 3,
+  "photoIntervalMinutes": 30,
   "homework": {
     "son": { "name": "徐梓逸", "date": "2026-11-23", "items": ["语文：抄写词语两页", "数学：口算 20 题"] },
     "daughter": { "name": "徐清湲", "date": "2026-11-23", "items": ["英语：跟读 Unit 3", "语文：背古诗一首"] }
