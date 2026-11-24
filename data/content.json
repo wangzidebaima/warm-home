@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "title": "温馨的小家",
   "subtitle": "有爱 · 温暖 · 每一天",
   "examDate": "2027-01-17",
@@ -23,7 +23,7 @@
   "photoIntervalMinutes": 30,
   "homework": {
     "son": { "name": "徐梓逸", "date": "2026-11-23", "items": ["语文：抄写词语两页", "数学：口算 20 题"] },
-    "daughter": { "name": "徐清湲", "date": "2026-11-23", "items": ["英语：跟读 Unit 3", "语文：背古诗一首"] }
+    "daughter": { "name": "徐清湲", "date": "2026-11-24", "items": ["英语：对话抄写在正式本上", "Your neighbours are very friendly.", "Yes, they are. There is a playground.", "We often play there.", "That's nice."] }
   },
   "loveTopics": [
     "今天，我们全家都好好说话",
