@@ -19,7 +19,7 @@ body {
   background:var(--cream);
   padding:1.4vh 1.6vw;
   display:grid;
-  grid-template-rows: auto auto minmax(0,1.3fr) minmax(0,0.96fr);
+  grid-template-rows: auto auto minmax(0,1fr);
   gap:1.1vh;
   border-radius:18px;
 }
@@ -62,10 +62,11 @@ body {
 .theme-text { font-size:2.15vh; color:#8A3B5E; font-weight:600; flex:1; }
 .special-day { font-size:1.7vh; color:#B4748C; flex:none; }
 
-/* middle */
-.middle { display:grid; grid-template-columns: 0.95fr 1.85fr; gap:1.1vw; min-height:0; }
+/* main layout：左侧待办+作业，右侧大照片竖版 */
+.main { display:grid; grid-template-columns: 1.6fr 1fr; gap:1.1vw; min-height:0; }
+.left-col { display:flex; flex-direction:column; gap:1.1vh; min-height:0; }
 .card { display:flex; flex-direction:column; min-height:0; border-radius:14px; padding:1.2vh 1vw 1vh; }
-.card-todo { background:var(--mint); border:2px solid var(--mint-b); }
+.card-todo { flex:1; background:var(--mint); border:2px solid var(--mint-b); }
 .card-photo{ background:var(--peach); border:2px solid var(--peach-b); align-items:center; }
 .card-title { font-size:2.15vh; font-weight:700; display:flex; align-items:center; gap:0.5vw; margin-bottom:0.8vh; flex:none; }
 .card-todo .card-title { color:#2F5E42; }
@@ -91,7 +92,7 @@ body {
 .photo-empty { font-size:1.7vh; color:#B79A6E; text-align:center; padding:1vh 0; }
 
 /* homework */
-.homework { display:grid; grid-template-columns:1fr 1fr; gap:1.1vw; min-height:0; background:var(--purple); border:2px solid var(--purple-b); border-radius:16px; padding:1.2vh 1vw; }
+.homework { flex:1.25; display:grid; grid-template-columns:1fr 1fr; gap:1.1vw; min-height:0; background:var(--purple); border:2px solid var(--purple-b); border-radius:16px; padding:1.2vh 1vw; }
 .hw-col { display:flex; flex-direction:column; min-height:0; border-radius:12px; padding:1vh 1vw; }
 .hw-son { background:#E6F2FD; }
 .hw-daughter { background:#FDE6EE; }
@@ -106,5 +107,5 @@ body {
 .hw-daughter .item { color:#8A3B5E; border-left:0.6vh solid #E08FB0; }
 
 @media (max-aspect-ratio: 5/4) {
-  .middle { grid-template-columns:1fr; }
+  .main { grid-template-columns:1fr; }
 }
