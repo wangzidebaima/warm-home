@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "title": "温馨的小家",
   "subtitle": "有爱 · 温暖 · 每一天",
   "examDate": "2027-01-17",
@@ -10,8 +10,7 @@
   "weatherKey": "524d1a3252d30c3e4368b0057389eba2",
   "weatherAdcode": "610100",
   "todos": [
-    "徐梓逸记得吃药，分清饭前饭后",
-    "今晚讲英语卷子"
+    "徐梓逸记得吃药，分清饭前饭后"
   ],
   "messages": [],
   "photos": [
