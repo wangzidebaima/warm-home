@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "title": "温馨的小家",
   "subtitle": "有爱 · 温暖 · 每一天",
   "examDate": "2027-01-17",
@@ -25,7 +25,7 @@
   "photoIntervalMinutes": 30,
   "homework": {
     "son": { "name": "徐梓逸", "date": "2026-11-27", "endDate": "2026-11-29", "items": ["道法：同步练习 p43-45", "地理：73页知识小结1-4", "地理：培优练 p68-71", "数学：练习册 p123-126（不写124页阅读理解、126页第15题）"] },
-    "daughter": { "name": "徐清湲", "date": "2026-11-24", "items": ["英语：对话抄写在正式本上", "Your neighbours are very friendly.", "Yes, they are. There is a playground.", "We often play there.", "That's nice."] }
+    "daughter": { "name": "徐清湲", "date": "2026-11-27", "endDate": "2026-11-29", "items": ["科学：复习六个实验，能说出实验名称、材料、步骤&现象、结论", "① 研究鸽子的正羽 P13", "② 体验脂肪的作用 P16", "③ 探究动能大小与物体速度的关系 P31", "④ 连接简单电路 P36", "⑤ 检测不同材料的导电性 P38", "⑥ 解暗箱 P42"] }
   },
   "loveTopics": [
     "今天，我们全家都好好说话",
