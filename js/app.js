@@ -1,6 +1,9 @@
 (function () {
   'use strict';
   var DATA_URL = 'data/content.json';
+  // 当前前端代码版本；content.json 的 codeVersion 更高时自动刷新页面加载新代码
+  var CODE_VERSION = 1;
+  var bootCodeVer = 0; // 页面启动时的数据代码版本，作为刷新基准，防止反复刷新
   var content = null;
   var photoTimer = null;
   var photoIdx = 0;
@@ -13,7 +16,11 @@
   function loadContent(cb) {
     fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { return r.json(); })
-      .then(function (d) { content = d; renderAll(); if (cb) cb(); })
+      .then(function (d) {
+        content = d;
+        if (!bootCodeVer && d.codeVersion) bootCodeVer = d.codeVersion; // 记录启动基准
+        renderAll(); if (cb) cb();
+      })
       .catch(function () {
         // 首次可能拿到缓存，仍尝试渲染
         if (!content && cb) cb();
@@ -320,6 +327,11 @@
       fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' })
         .then(function (r) { return r.json(); })
         .then(function (d) {
+          // 代码版本检测：服务器 codeVersion 比页面启动时变大 → 有新代码，自动刷新加载
+          if (d && d.codeVersion && bootCodeVer && d.codeVersion > bootCodeVer) {
+            location.reload();
+            return;
+          }
           if (d && d.version !== lastVer) {
             lastVer = d.version;
             content = d;

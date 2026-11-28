@@ -1,5 +1,5 @@
 // 家庭看板 Service Worker —— 只缓存静态外壳，内容/照片始终走网络保证自动更新
-var CACHE = 'warm-home-v8';
+var CACHE = 'warm-home-v9';
 var SHELL = [
   './',
   './index.html',
@@ -30,12 +30,10 @@ self.addEventListener('fetch', function (e) {
     e.respondWith(fetch(e.request).catch(function () { return caches.match(e.request); }));
     return;
   }
-  // 静态外壳 —— 缓存优先
-  e.respondWith(caches.match(e.request).then(function (hit) {
-    return hit || fetch(e.request).then(function (res) {
-      var copy = res.clone();
-      caches.open(CACHE).then(function (c) { c.put(e.request, copy); });
-      return res;
-    });
-  }));
+  // 静态外壳 —— 网络优先(保证代码更新后刷新能拿到新版)，断网时回退缓存
+  e.respondWith(fetch(e.request).then(function (res) {
+    var copy = res.clone();
+    caches.open(CACHE).then(function (c) { c.put(e.request, copy); });
+    return res;
+  }).catch(function () { return caches.match(e.request); }));
 });
