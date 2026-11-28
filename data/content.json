@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 16,
   "codeVersion": 1,
   "title": "温馨的小家",
   "subtitle": "有爱 · 温暖 · 每一天",
@@ -11,7 +11,10 @@
   "weatherKey": "524d1a3252d30c3e4368b0057389eba2",
   "weatherAdcode": "610100",
   "todos": [
-    "徐梓逸记得吃药，分清饭前饭后"
+    "吃药 · 徐梓逸：氨溴索",
+    "吃药 · 徐清湲：止咳糖浆",
+    "两人都要：维C、咽扁颗粒",
+    "两人都要：喷鼻子、喷喉咙"
   ],
   "messages": [],
   "photos": [
