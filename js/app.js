@@ -2,7 +2,7 @@
   'use strict';
   var DATA_URL = 'data/content.json';
   // 当前前端代码版本；content.json 的 codeVersion 更高时自动刷新页面加载新代码
-  var CODE_VERSION = 1;
+  var CODE_VERSION = 2;
   var bootCodeVer = 0; // 页面启动时的数据代码版本，作为刷新基准，防止反复刷新
   var content = null;
   var photoTimer = null;
@@ -169,7 +169,7 @@
       // 复制后总高 = 2*contentH + gap，一个周期 = contentH + gap
       var gap = parseFloat(getComputedStyle(track).gap) || 0;
       var cycle = contentH + gap;
-      var speed = 15; // px/s
+      var speed = 8; // px/s
       var dist = cycle;
       var dur = dist / speed;
       var start = performance.now();
